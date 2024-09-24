@@ -87,7 +87,7 @@ function calculateManpower() {
     const totalTimeCT = timeSimpleCT + timeComplexCT;
     const totalTimeMRI = timeSimpleMRI + timeComplexMRI;
     const totalTimeReporting = totalTimeCT + totalTimeMRI;
-    const adjustedTotalTimeReporting = totalTimeReporting * (1 + assumptions.seasonalAdjustment);
+    const adjustedTotalTimeReporting = totalTimeReporting * (assumptions.seasonalAdjustment);
     const totalDeficitSurplusManhours = totalAvailableManhours - adjustedTotalTimeReporting;
     const totalDeficitSurplusManpower = totalDeficitSurplusManhours / assumptions.manhours;
 
