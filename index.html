@@ -21,14 +21,17 @@
                 <div class="form-group">
                     <label for="manhours">Available manhours per month:</label>
                     <input type="number" id="manhours" required>
+                    <span class="assumption-comment">Assuming 8 hours per day, 25 working days per month</span>
                 </div>
                 <div class="form-group">
                     <label for="consultantTime">Consultant time assumed for CT & MRI:</label>
                     <input type="number" id="consultantTime" required>
+                    <span class="assumption-comment">Factoring in consultant's additional responsibilities</span>
                 </div>
                 <div class="form-group">
                     <label for="registrarTime">Registrar/Resident time assumed for CT & MRI:</label>
                     <input type="number" id="registrarTime" required>
+                    <span class="assumption-comment">Factoring in registrar's additional responsibilities</span>
                 </div>
                 <div class="form-group">
                     <label for="simpleCTTime">Average reporting time - Simple CT (in mins):</label>
@@ -57,6 +60,7 @@
                 <div class="form-group">
                     <label for="seasonalAdjustment">Percentage adjustment for seasonal variations:</label>
                     <input type="number" id="seasonalAdjustment" required>
+                    <span class="assumption-comment">Adjustment for seasonal variations and assumptions on complexity</span>
                 </div>
                 <button type="button" onclick="saveAssumptions()">Save Assumptions</button>
             </form>
