@@ -24,12 +24,12 @@
                     <span class="assumption-comment">Assuming 8 hours per day, 25 working days per month</span>
                 </div>
                 <div class="form-group">
-                    <label for="consultantTime">Consultant time assumed for CT & MRI:</label>
+                    <label for="consultantTime">Consultant time assumed for CT & MRI (%):</label>
                     <input type="number" id="consultantTime" required>
                     <span class="assumption-comment">Factoring in consultant's additional responsibilities</span>
                 </div>
                 <div class="form-group">
-                    <label for="registrarTime">Registrar/Resident time assumed for CT & MRI:</label>
+                    <label for="registrarTime">Registrar/Resident time assumed for CT & MRI (%):</label>
                     <input type="number" id="registrarTime" required>
                     <span class="assumption-comment">Factoring in registrar's additional responsibilities</span>
                 </div>
@@ -58,7 +58,7 @@
                     <input type="number" id="complexMRIWork" required>
                 </div>
                 <div class="form-group">
-                    <label for="seasonalAdjustment">Percentage adjustment for seasonal variations:</label>
+                    <label for="seasonalAdjustment">Percentage adjustment considering minimum efficiency levels:</label>
                     <input type="number" id="seasonalAdjustment" required>
                     <span class="assumption-comment">Adjustment for seasonal variations and assumptions on complexity</span>
                 </div>
@@ -86,6 +86,25 @@
                 </div>
                 <button type="button" onclick="calculateManpower()">Calculate</button>
             </form>
+            <div id="deficit-options" class="form-group" style="display: none;">
+                <label>If deficit, who are you planning to hire?</label>
+                <div>
+                    <input type="radio" id="hireRegistrars" name="hireOption" value="registrars" onclick="showAdditionalInput(false)">
+                    <label for="hireRegistrars">Only registrars</label>
+                </div>
+                <div>
+                    <input type="radio" id="hireDoctors" name="hireOption" value="doctors" onclick="showAdditionalInput(false)">
+                    <label for="hireDoctors">Only doctors</label>
+                </div>
+                <div>
+                    <input type="radio" id="hireMix" name="hireOption" value="mix" onclick="showAdditionalInput(true)">
+                    <label for="hireMix">A mix of registrar & doctor</label>
+                </div>
+                <div id="additionalRegistrarsInput" class="form-group" style="display: none;">
+                    <label for="additionalRegistrars">How many additional registrars you want?</label>
+                    <input type="number" id="additionalRegistrars">
+                </div>
+            </div>
             <div id="result"></div>
         </div>
     </div>
