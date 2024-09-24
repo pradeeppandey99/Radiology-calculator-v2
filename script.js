@@ -33,15 +33,15 @@ function loadAssumptions() {
         // Default assumptions if none are saved
         assumptions = {
             manhours: 200,
-            consultantTime: 80,
-            registrarTime: 50,
+            consultantTime: 0.8,
+            registrarTime: 0.5,
             simpleCTTime: 30,
             complexCTTime: 120,
-            complexCTWork: 20,
+            complexCTWork: 0.2,
             simpleMRITime: 40,
             complexMRITime: 150,
-            complexMRIWork: 25,
-            seasonalAdjustment: 80
+            complexMRIWork: 0.25,
+            seasonalAdjustment: 0.8
         };
         // Save default assumptions to localStorage
         localStorage.setItem('assumptions', JSON.stringify(assumptions));
@@ -87,7 +87,8 @@ function calculateManpower() {
     const totalTimeCT = timeSimpleCT + timeComplexCT;
     const totalTimeMRI = timeSimpleMRI + timeComplexMRI;
     const totalTimeReporting = totalTimeCT + totalTimeMRI;
-    const adjustedTotalTimeReporting = totalTimeReporting * (assumptions.seasonalAdjustment);
+    // Corrected formula:
+    const adjustedTotalTimeReporting = totalTimeReporting * assumptions.seasonalAdjustment;
     const totalDeficitSurplusManhours = totalAvailableManhours - adjustedTotalTimeReporting;
     const totalDeficitSurplusManpower = totalDeficitSurplusManhours / assumptions.manhours;
 
