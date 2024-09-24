@@ -68,6 +68,25 @@
         <div id="dynamic" class="page">
             <h2>Dynamic Inputs</h2>
             <form id="dynamic-form">
+                <div id="deficit-options" class="form-group" style="display: none;">
+                    <label>Who are you planning to hire?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="hireRegistrars" name="hireOption" value="registrars" onclick="showAdditionalInput(false)">
+                        <label for="hireRegistrars">Only registrars</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" id="hireDoctors" name="hireOption" value="doctors" onclick="showAdditionalInput(false)">
+                        <label for="hireDoctors">Only doctors</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" id="hireMix" name="hireOption" value="mix" onclick="showAdditionalInput(true)">
+                        <label for="hireMix">A mix of registrar & doctor</label>
+                    </div>
+                    <div id="additionalRegistrarsInput" class="form-group" style="display: none;">
+                        <label for="additionalRegistrars">How many additional registrars you want?</label>
+                        <input type="number" id="additionalRegistrars">
+                    </div>
+                </div>
                 <div class="form-group">
                     <label for="consultants">Total no. of consultants:</label>
                     <input type="number" id="consultants" required>
@@ -86,25 +105,6 @@
                 </div>
                 <button type="button" onclick="calculateManpower()">Calculate</button>
             </form>
-            <div id="deficit-options" class="form-group" style="display: none;">
-                <label>If deficit, who are you planning to hire?</label>
-                <div>
-                    <input type="radio" id="hireRegistrars" name="hireOption" value="registrars" onclick="showAdditionalInput(false)">
-                    <label for="hireRegistrars">Only registrars</label>
-                </div>
-                <div>
-                    <input type="radio" id="hireDoctors" name="hireOption" value="doctors" onclick="showAdditionalInput(false)">
-                    <label for="hireDoctors">Only doctors</label>
-                </div>
-                <div>
-                    <input type="radio" id="hireMix" name="hireOption" value="mix" onclick="showAdditionalInput(true)">
-                    <label for="hireMix">A mix of registrar & doctor</label>
-                </div>
-                <div id="additionalRegistrarsInput" class="form-group" style="display: none;">
-                    <label for="additionalRegistrars">How many additional registrars you want?</label>
-                    <input type="number" id="additionalRegistrars">
-                </div>
-            </div>
             <div id="result"></div>
         </div>
     </div>
