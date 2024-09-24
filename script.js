@@ -121,16 +121,16 @@ function calculateManpower() {
         let additionalDoctors = 0;
         if (hireOption.value === 'registrars') {
             additionalRegistrars = Math.abs(totalDeficitSurplusManhours) / (assumptions.registrarTime * assumptions.manhours);
-            resultDiv.innerHTML += `<p class="additional-result">Additional registrars required: ${additionalRegistrars.toFixed(0)}</p>`;
+            resultDiv.innerHTML += `<p class="additional-result">Additional registrars required: ${additionalRegistrars.toFixed(1)}</p>`;
         } else if (hireOption.value === 'doctors') {
             additionalDoctors = Math.abs(totalDeficitSurplusManhours) / (assumptions.consultantTime * assumptions.manhours);
-            resultDiv.innerHTML += `<p class="additional-result">Additional doctors required: ${additionalDoctors.toFixed(0)}</p>`;
+            resultDiv.innerHTML += `<p class="additional-result">Additional doctors required: ${additionalDoctors.toFixed(1)}</p>`;
         } else if (hireOption.value === 'mix') {
             const additionalRegistrarsInput = parseFloat(document.getElementById('additionalRegistrars').value) || 0;
             const remainingManhours = Math.abs(totalDeficitSurplusManhours) - (additionalRegistrarsInput * assumptions.registrarTime * assumptions.manhours);
             additionalDoctors = remainingManhours / (assumptions.consultantTime * assumptions.manhours);
-            resultDiv.innerHTML += `<p class="additional-result">Additional registrars required: ${additionalRegistrarsInput.toFixed(0)}</p>`;
-            resultDiv.innerHTML += `<p class="additional-result">Additional doctors required: ${additionalDoctors.toFixed(0)}</p>`;
+            resultDiv.innerHTML += `<p class="additional-result">Additional registrars required: ${additionalRegistrarsInput.toFixed(1)}</p>`;
+            resultDiv.innerHTML += `<p class="additional-result">Additional doctors required: ${additionalDoctors.toFixed(1)}</p>`;
         }
     }
 }
