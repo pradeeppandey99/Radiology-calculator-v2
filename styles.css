@@ -8,22 +8,55 @@ body {
     background-attachment: fixed;
 }
 
-#calculator {
-    background-color: #fff;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.container {
+    max-width: 800px;
+    width: 95%;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
-h1, h2 {
+h1 {
+    text-align: center;
     color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
 }
 
-form {
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
     margin-bottom: 20px;
 }
 
-.input-group {
+nav ul li {
+    display: inline-block;
+    margin: 5px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #007BFF;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background-color: #0056b3;
+}
+
+.page {
+    display: none;
+}
+
+.form-group {
     margin-bottom: 15px;
 }
 
@@ -38,8 +71,10 @@ label {
 input[type="number"] {
     width: 100%;
     padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
 button {
@@ -84,6 +119,7 @@ button:hover {
         width: 100%;
         margin: 0;
         border-radius: 0;
+        padding: 10px;
     }
 
     h1 {
@@ -97,10 +133,13 @@ button:hover {
 
     nav ul li a {
         display: block;
+        width: 100%;
+        box-sizing: border-box;
     }
 
-    input, button {
+    input[type="number"], button {
         font-size: 16px;
+        height: 40px; /* Increase touch target size */
     }
 
     #result {
