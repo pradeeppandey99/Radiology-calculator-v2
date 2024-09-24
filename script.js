@@ -33,15 +33,15 @@ function loadAssumptions() {
         // Default assumptions if none are saved
         assumptions = {
             manhours: 200,
-            consultantTime: 0.8,
-            registrarTime: 0.5,
+            consultantTime: 80,
+            registrarTime: 50,
             simpleCTTime: 30,
             complexCTTime: 120,
-            complexCTWork: 0.2,
+            complexCTWork: 20,
             simpleMRITime: 40,
             complexMRITime: 150,
-            complexMRIWork: 0.25,
-            seasonalAdjustment: 0.8
+            complexMRIWork: 25,
+            seasonalAdjustment: 80
         };
         // Save default assumptions to localStorage
         localStorage.setItem('assumptions', JSON.stringify(assumptions));
