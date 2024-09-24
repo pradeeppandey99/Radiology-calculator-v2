@@ -137,6 +137,21 @@ button:hover {
     font-weight: bold;
 }
 
+.radio-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.radio-group input {
+    margin-right: 10px;
+}
+
+.additional-result {
+    color: green;
+    font-weight: bold;
+}
+
 /* Mobile-specific styles */
 @media (max-width: 600px) {
     .container {
