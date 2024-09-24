@@ -1,0 +1,31 @@
+A calculator that can provide the manpower requirement for radiology dept based on following inputs:
+1. Total no. of consultants
+2. Total no. of registrars
+3. Available manhours per month
+4. Consultant time assumed for CT & MRI for those consultant's who have additional responsibilities
+5. Resgistrar/Resident time assumed for CT & MRI reporting
+6. Average reporting time - Simple CT (in mins)
+7. Average reporting time - Complex CT (in mins)
+8. % of Complex CT Work
+9. Average reporting time - Simple MRI (in mins)
+10. Average reporting time - Complex MRI (in mins)
+11. % of Complex MRI Work
+12. No of patients coming for CT per month
+13. No of patients coming for MRI per month
+14. % adjustment for seasonal variations
+
+Based on above inputs, the calculator will calculate the following (formula provided):
+1. Total available manhours per month= (no of consultants * consultant time assumed for CT & MRI for those consultant's who have additional responsibilities * available manhours per month) + (no of registrars * registrar/resident time assumed for CT & MRI reporting * available manhours per month)
+2. Time required for simple CT reporting= (no of patients coming for CT per month*average reporting time*(1-% of Complex CT Work))/60
+3. Time required for complex CT reporting= (no of patients coming for CT per month*average reporting time*(% of Complex CT Work))/60
+4. Time required for simple MRI reporting= (no of patients coming for MRI per month*average reporting time*(1-% of Complex MRI Work))/60
+5. Time required for complex MRI reporting= (no of patients coming for MRI per month*average reporting time*(% of Complex MRI Work))/60
+6. Total time required for CT per month= Time required for simple CT reporting + Time required for complex CT reporting
+7. Total time required for MRI per month= Time required for simple MRI reporting + Time required for complex MRI reporting
+8. Total time required for reporting per month= Total time required for CT per month + Total time required for MRI per month
+9. Adjusted total time required for reporting per month= Total time required for reporting per month * (% adjustment for seasonal variations/100)
+10. Total Deficit or surplus of manhours per month= Total available manhours per month - Adjusted total time required for reporting per month
+11. Total Deficit or surplus manpower required= Total Deficit or surplus of manhours per month/available manhours per month
+
+Finally, the calculator will provide the manpower requirement:
+1. Total deficit or surplus of manhours required
