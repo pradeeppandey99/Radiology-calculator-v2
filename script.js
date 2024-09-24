@@ -121,4 +121,16 @@ function calculateManpower() {
         let additionalDoctors = 0;
         if (hireOption.value === 'registrars') {
             additionalRegistrars = Math.abs(totalDeficitSurplusManhours) / (assumptions.registrarTime * assumptions.manhours);
-            resultDiv.innerHTML += `<p>Additional registrars required:
+            resultDiv.innerHTML += `<p>Additional registrars required: ${additionalRegistrars.toFixed(2)}</p>`;
+        } else if (hireOption.value === 'doctors') {
+            additionalDoctors = Math.abs(totalDeficitSurplusManhours) / (assumptions.consultantTime * assumptions.manhours);
+            resultDiv.innerHTML += `<p>Additional doctors required: ${additionalDoctors.toFixed(2)}</p>`;
+        } else if (hireOption.value === 'mix') {
+            const additionalRegistrarsInput = parseFloat(document.getElementById('additionalRegistrars').value) || 0;
+            const remainingManhours = Math.abs(totalDeficitSurplusManhours) - (additionalRegistrarsInput * assumptions.registrarTime * assumptions.manhours);
+            additionalDoctors = remainingManhours / (assumptions.consultantTime * assumptions.manhours);
+            resultDiv.innerHTML += `<p>Additional registrars required: ${additionalRegistrarsInput.toFixed(2)}</p>`;
+            resultDiv.innerHTML += `<p>Additional doctors required: ${additionalDoctors.toFixed(2)}</p>`;
+        }
+    }
+}
