@@ -68,6 +68,22 @@
         <div id="dynamic" class="page">
             <h2>Dynamic Inputs</h2>
             <form id="dynamic-form">
+                <div class="form-group">
+                    <label for="consultants">Total no. of consultants:</label>
+                    <input type="number" id="consultants" required>
+                </div>
+                <div class="form-group">
+                    <label for="registrars">Total no. of registrars:</label>
+                    <input type="number" id="registrars" required>
+                </div>
+                <div class="form-group">
+                    <label for="ctPatients">No of patients coming for CT per month:</label>
+                    <input type="number" id="ctPatients" required>
+                </div>
+                <div class="form-group">
+                    <label for="mriPatients">No of patients coming for MRI per month:</label>
+                    <input type="number" id="mriPatients" required>
+                </div>
                 <div id="deficit-options" class="form-group" style="display: none;">
                     <label>Who are you planning to hire?</label>
                     <div class="radio-group">
@@ -86,22 +102,6 @@
                         <label for="additionalRegistrars">How many additional registrars you want?</label>
                         <input type="number" id="additionalRegistrars">
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="consultants">Total no. of consultants:</label>
-                    <input type="number" id="consultants" required>
-                </div>
-                <div class="form-group">
-                    <label for="registrars">Total no. of registrars:</label>
-                    <input type="number" id="registrars" required>
-                </div>
-                <div class="form-group">
-                    <label for="ctPatients">No of patients coming for CT per month:</label>
-                    <input type="number" id="ctPatients" required>
-                </div>
-                <div class="form-group">
-                    <label for="mriPatients">No of patients coming for MRI per month:</label>
-                    <input type="number" id="mriPatients" required>
                 </div>
                 <button type="button" onclick="calculateManpower()">Calculate</button>
             </form>
